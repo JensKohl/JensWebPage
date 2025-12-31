@@ -14,7 +14,7 @@ const SectionAbout: React.FC = () => {
   // useEffect runs automatically when the component first appears on the screen.
   useEffect(() => {
     // We "fetch" (download) the file from your public folder.
-    fetch('/docs/AboutMe.md')
+    fetch('/docs/aboutMe.md')
       .then((res) => {
         // If the file isn't there, we throw an error.
         if (!res.ok) throw new Error("Markdown file not found");
