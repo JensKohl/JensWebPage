@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import ReactMarkdown from 'react-markdown';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { social_links } from '../data/contact'; 
+import { social_links } from '../data/contact';
+import ViewCounter from './ViewCounter';
 
 const ProfileCard: React.FC = () => {
   // --- 1. STATE ---
@@ -119,13 +120,13 @@ const ProfileCard: React.FC = () => {
         ))}
       </div>
 
-      {/* 5. COPYRIGHT FOOTER 
-          - mt-2 pt-12 creates space at the bottom. */}
-        <div className="mt-2 pt-12 flex flex-col items-center gap-8 w-full">
-            <p className="text-[10px] text-[#cccccc] uppercase tracking-[0.2em] font-medium">
-                © {new Date().getFullYear()} Jens Kohl
-            </p>
-        </div>
+      {/* 5. COPYRIGHT FOOTER */}
+      <div className="mt-auto pt-12 flex flex-col items-start w-full">
+        <p className="text-[10px] text-[#cccccc] uppercase tracking-[0.2em] font-medium">
+          © {new Date().getFullYear()} Jens Kohl
+        </p>
+      <ViewCounter /> 
+</div>
 
     </aside>
   );
