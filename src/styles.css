@@ -1,0 +1,17 @@
+@import "tailwindcss";
+
+/* Design tokens */
+:root {
+	--font-serif: Georgia, Cambria, "Times New Roman", serif;
+	--font-sans: Inter, system-ui, sans-serif;
+
+	--color-text: #111111;
+	--color-muted: #555555;
+}
+
+/* Base styles */
+html {
+	font-family: var(--font-serif);
+	color: var(--color-text);
+	background-color: white;
+}
