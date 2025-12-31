@@ -1,42 +1,43 @@
 @import "tailwindcss";
 
-@theme {
-  --font-sans: "Source Sans 3", sans-serif;
+\@theme {
+	--font-sans: "Source Sans 3", sans-serif;
 }
 
 /* Ensure the background of the whole page matches the content area background */
-html, body {
-  background-color: #eeeeee;
-  margin: 0;
-  padding: 0;
+html,
+body {
+	background-color: #eeeeee;
+	margin: 0;
+	padding: 0;
 }
 
 /* Smooth scroll for the navigation links */
-@utility no-scrollbar {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-  &::-webkit-scrollbar {
-    display: none;
-  }
+\@utility no-scrollbar {
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+	&::-webkit-scrollbar {
+		display: none;
+	}
 }
 
 /* NEW: Custom styling for the main BROWSER scrollbar 
   This will appear on the far right of the screen.
 */
 ::-webkit-scrollbar {
-  width: 10px;
+	width: 10px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #eeeeee; /* Matches your site background */
+	background: #eeeeee; /* Matches your site background */
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #cccccc; /* Subtle grey bar */
-  border-radius: 5px;
-  border: 2px solid #eeeeee; /* Creates a padding effect */
+	background: #cccccc; /* Subtle grey bar */
+	border-radius: 5px;
+	border: 2px solid #eeeeee; /* Creates a padding effect */
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #bbbbbb;
+	background: #bbbbbb;
 }

@@ -10,13 +10,21 @@ interface NavBarProps {
 }
 
 const NavBar: React.FC<NavBarProps> = ({ active, setActive }) => {
-	const navLinks = ["About", "Resume", "Projects", "Publications", "Contact", "Legal"];
+	const navLinks = [
+		"About",
+		"Resume",
+		"Projects",
+		"Publications",
+		"Contact",
+		"Legal",
+	];
 
 	return (
 		<nav className="fixed top-0 left-0 w-full h-[64px] bg-white border-b border-[#eeeeee] z-[100] flex items-center px-8">
 			{/* Name/Brand Section with vertical divider */}
 			<div className="flex items-center h-full pr-8 border-r border-[#eeeeee] mr-8">
 				<button
+					type="button"
 					onClick={() => setActive("About")}
 					className="text-[14px] font-black uppercase tracking-[0.25em] text-[#333333] cursor-pointer"
 				>
@@ -28,6 +36,7 @@ const NavBar: React.FC<NavBarProps> = ({ active, setActive }) => {
 			<div className="flex gap-8">
 				{navLinks.map((item) => (
 					<button
+						type="button"
 						key={item}
 						onClick={() => setActive(item)}
 						className={`text-[11px] font-bold uppercase tracking-[0.25em] transition-colors cursor-pointer ${

@@ -1,109 +1,56 @@
-import { Github, Linkedin, Mail, Twitter, Instagram, Search } from 'lucide-react';
+@import "tailwindcss";
 
-const FullWidthHeader = () => (
-  <nav className="fixed top-0 left-0 right-0 z-[100] bg-white border-b border-border-thin h-[64px] flex items-center px-8">
-    <div className="flex items-center">
-      <a href="/" className="font-[900] uppercase tracking-[-0.05em] text-[18px] border-r border-border-thin pr-8 mr-8 h-[64px] flex items-center">
-        Michael D'Angelo
-      </a>
-    </div>
+@theme {
+  /* Defining your brand colors for easy use in Tailwind classes */
+  --color-border-thin: #eeeeee;
+  --color-text-muted: #555555;
+  --color-text-faint: #aaaaaa;
 
-    <div className="hidden lg:flex gap-8">
-      {['About', 'Resume', 'Projects', 'Stats', 'Contact'].map((item) => (
-        <a 
-          key={item} 
-          href={`#${item.toLowerCase()}`} 
-          className="text-[10px] font-bold uppercase tracking-[0.25em] text-gray-400 hover:text-black transition-colors"
-        >
-          {item}
-        </a>
-      ))}
-    </div>
+  /* Adding your custom timing for the minimalist transitions */
+  --animate-fadeIn: fadeIn 0.5s ease-out;
 
-    <div className="ml-auto border-l border-border-thin h-[64px] flex items-center pl-8 cursor-pointer group">
-      <Search className="w-4 h-4 text-gray-300 group-hover:text-black transition-colors" />
-    </div>
-  </nav>
-);
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(4px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+}
 
-const Sidebar = () => (
-  <section className="lg:fixed lg:left-0 lg:top-[64px] lg:h-[calc(100vh-64px)] lg:w-[400px] bg-side-gray p-12 lg:p-16 flex flex-col border-r border-border-thin overflow-y-auto">
-    <div className="mb-10">
-      <div className="w-32 h-32 rounded-full overflow-hidden mb-8 border border-white shadow-sm">
-        <img 
-          src="https://api.dicebear.com/7.x/avataaars/svg?seed=Michael" 
-          alt="Profile" 
-          className="w-full h-full object-cover grayscale"
-        />
-      </div>
-      <h1 className="text-[32px] font-[900] uppercase tracking-[-0.05em] leading-[1.1] text-gray-900">
-        Michael <br /> D'Angelo
-      </h1>
-      <p className="mt-6 text-gray-400 font-mono text-[10px] uppercase tracking-[0.3em] border-b border-gray-200 pb-6">
-        <a href="mailto:michael@linden-dangelo.com" className="hover:text-[#2ebaae] transition-colors">
-          michael@linden-dangelo.com
-        </a>
-      </p>
-    </div>
+@layer base {
+  html {
+    /* Smooth scroll for the internal navigation links */
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
 
-    <div className="text-gray-500 text-[14px] font-[300] space-y-5 leading-relaxed">
-      <p>
-        Hi, I'm Michael. I am a <a href="#" className="border-b border-gray-300 hover:border-black transition-all">Stanford MS</a> graduate, 
-        engineer, and builder of things.
-      </p>
-    </div>
+  body {
+    @apply bg-[#f9f9f9] text-[#333333] selection:bg-black selection:text-white;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+}
 
-    <div className="mt-auto pt-10 flex gap-4">
-      {[Github, Linkedin, Instagram, Twitter, Mail].map((Icon, i) => (
-        <Icon key={i} className="w-4 h-4 text-gray-300 hover:text-black cursor-pointer transition-colors" />
-      ))}
-    </div>
-  </section>
-);
+@layer utilities {
+  /* Utility to hide scrollbars while allowing scrolling (for the nav or sidebar) */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
 
-export default function App() {
-  return (
-    <div className="min-h-screen bg-main-bg">
-      <FullWidthHeader />
-
-      <div className="relative pt-[64px] flex flex-col lg:block lg:pl-[400px]">
-        <Sidebar />
-
-        <main className="px-6 lg:px-14 py-12 max-w-[900px]">
-          {/* Card 1 */}
-          <article id="about" className="bg-white border border-border-thin p-8 lg:p-12 mb-12">
-            <header className="mb-10 border-b border-gray-100 pb-8">
-              <h2 className="text-[26px] font-[900] uppercase tracking-tight italic">
-                About this site
-              </h2>
-              <p className="mt-2 text-[10px] font-mono text-gray-400 uppercase tracking-[0.2em]">
-                A responsive React application
-              </p>
-            </header>
-            <div className="text-gray-600 text-[17px] font-[300] space-y-6 leading-[1.8]">
-              <p>
-                Welcome to my portfolio. This site is built with 
-                <span className="text-black font-medium ml-1">Vite + Tailwind v4</span>. 
-                It's designed to be fast, lightweight, and permanent.
-              </p>
-            </div>
-          </article>
-
-          {/* Card 2 */}
-          <article id="projects" className="bg-white border border-border-thin p-8 lg:p-12 mb-12">
-            <header className="mb-10 border-b border-gray-100 pb-8">
-              <h2 className="text-[26px] font-[900] uppercase tracking-tight italic">
-                Nearest Dollar
-              </h2>
-              <p className="mt-2 text-[10px] font-mono text-gray-400 uppercase tracking-[0.2em]">
-                Project Showcase
-              </p>
-            </header>
-            <div className="aspect-video bg-side-gray mb-8 border border-border-thin"></div>
-            <p className="text-gray-600 font-[300]">An exploration into micro-donations and fintech.</p>
-          </article>
-        </main>
-      </div>
-    </div>
-  );
+  /* Custom styling for the main browser scrollbar to keep it thin and minimalist */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #dddddd;
+    border-radius: 10px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #bbbbbb;
+  }
 }
