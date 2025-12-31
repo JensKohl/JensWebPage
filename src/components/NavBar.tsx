@@ -10,7 +10,7 @@ interface NavBarProps {
 }
 
 const NavBar: React.FC<NavBarProps> = ({ active, setActive }) => {
-	const navLinks = ["About", "Resume", "Projects", "Publications", "Contact"];
+	const navLinks = ["About", "Resume", "Projects", "Publications", "Contact", "Legal"];
 
 	return (
 		<nav className="fixed top-0 left-0 w-full h-[64px] bg-white border-b border-[#eeeeee] z-[100] flex items-center px-8">

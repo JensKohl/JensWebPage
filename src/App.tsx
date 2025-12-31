@@ -27,11 +27,7 @@ export default function App() {
                         {activeSection === "Projects" && <SectionProjects />}
                         {activeSection === "Contact" && <SectionContact />}
                         {activeSection === 'Publications' && <SectionPublications />}
-
-                        {/* Updated to use SectionLegal */}
-                        {activeSection === 'Legal' && (
-                            <SectionLegal setActiveSection={setActiveSection} />
-                        )}
+						{activeSection === 'Legal' && <SectionLegal />}
                     </div>
                 </main>
             </div>
