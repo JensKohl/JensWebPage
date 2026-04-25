@@ -28,7 +28,7 @@ const ProfileCard: React.FC<ProfileCardProps> = ({ setActiveSection }) => {
 			<div className="mb-14">
 				<div className="w-40 h-40 rounded-full overflow-hidden mb-6 border-4 border-[#f4f4f4] shrink-0">
 					<img
-						src="/images/JensAnzug2.jpg"
+						src="/images/Jens.jpg"
 						alt="Jens K"
 						className="w-full h-full object-cover grayscale"
 					/>
