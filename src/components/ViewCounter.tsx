@@ -13,12 +13,16 @@ const ViewCounter: React.FC = () => {
 	useEffect(() => {
 		const key = "dr-jens-kohl-2025-final";
 
-		fetch(`https://api.counterapi.dev/v1/${key}/visits/up`)
-			.then((res) => res.json()) // Parse the JSON response stream into a JavaScript object
+		fetch(`https://counterapi.com/api/${key}/up/visits`)
+			.then((res) => {
+				if (!res.ok) throw new Error(`HTTP error ${res.status}`);
+				return res.json();
+			})
 			.then((data) => {
-				if (data?.count) {
+				const countValue = data?.value ?? data?.count;
+				if (countValue !== undefined && countValue !== null) {
 					// .toLocaleString() formats numbers with commas/dots based on user locale (e.g. 1,234)
-					setViews(data.count.toLocaleString());
+					setViews(Number(countValue).toLocaleString());
 				}
 			})
 			.catch(() => {

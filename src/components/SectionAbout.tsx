@@ -33,16 +33,15 @@ const SectionAbout: React.FC = () => {
 	}, []); // The empty brackets [] mean "only run this once".
 
 	return (
-		<section className="py-8">
-			{/* The Container: White background, gray border, and a shadow for the 'box' look */}
-			<div className="bg-white border border-[#eeeeee] p-10 shadow-sm rounded-sm max-w-5xl mx-auto">
+		<section className="animate-fadeIn pb-20">
+			{/* The Container: Unified white box matching SectionProjects */}
+			<div className="bg-white border border-[#eeeeee] p-8 shadow-sm transition-all">
 				{/* The Main Header */}
-				<h2 className="text-2xl font-black uppercase tracking-tighter text-[#333333]">
-					About me
-				</h2>
-
-				{/* The horizontal gray line divider */}
-				<hr className="my-6 border-t border-[#eeeeee]" />
+				<header className="mb-8 border-b border-[#eeeeee] pb-6">
+					<h1 className="text-[24px] font-black uppercase tracking-tight text-[#333333]">
+						About me
+					</h1>
+				</header>
 
 				<div className="text-[#666666] text-lg leading-relaxed">
 					{/* IF logic: If loading is true, show the skeleton. If false, show the Markdown. */}

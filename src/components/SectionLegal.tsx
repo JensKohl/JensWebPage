@@ -2,14 +2,16 @@ import type React from "react";
 
 const SectionLegal: React.FC = () => {
 	return (
-		<div className="animate-fadeIn">
-			{/* 1. THE WHITE BOX (Label removed for a cleaner start) */}
-			<div className="bg-white p-10 lg:p-16 shadow-[0_1px_3px_rgba(0,0,0,0.05)] border border-[#eeeeee]">
+		<section className="animate-fadeIn pb-20">
+			{/* Unified white box container matching SectionProjects */}
+			<div className="bg-white border border-[#eeeeee] p-8 shadow-sm transition-all">
 				{/* IMPRESSUM */}
 				<section className="mb-20">
-					<h2 className="text-[32px] font-black uppercase tracking-tight text-[#333333] mb-8">
-						Impressum
-					</h2>
+					<header className="mb-8 border-b border-[#eeeeee] pb-6">
+						<h1 className="text-[24px] font-black uppercase tracking-tight text-[#333333]">
+							Impressum
+						</h1>
+					</header>
 					<div className="space-y-6 text-[15px] leading-relaxed text-[#555555]">
 						<div>
 							<p className="font-bold text-black uppercase text-[10px] tracking-widest mb-2">
@@ -42,7 +44,7 @@ const SectionLegal: React.FC = () => {
 					</div>
 				</section>
 			</div>
-		</div>
+		</section>
 	);
 };
 

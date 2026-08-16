@@ -20,17 +20,19 @@ const SectionPublications: React.FC = () => {
 	}, []);
 
 	return (
-		<section className="animate-fadeIn">
-			{/* prose class provides built-in typographic rhythm; custom overrides tailor specific tags */}
-			<div className="text-[#666666] text-[15px] leading-relaxed prose prose-sm max-w-none">
-				<ReactMarkdown
-					components={{
-						h1: ({ ...props }) => (
-							<h1
-								className="text-[22px] font-black uppercase tracking-tight text-[#333333] mt-4 mb-8 border-b border-[#eeeeee] pb-4"
-								{...props}
-							/>
-						),
+		<section className="animate-fadeIn pb-20">
+			{/* Unified white box container matching SectionProjects */}
+			<div className="bg-white border border-[#eeeeee] p-8 shadow-sm transition-all">
+				{/* prose class provides built-in typographic rhythm; custom overrides tailor specific tags */}
+				<div className="text-[#666666] text-[15px] leading-relaxed prose prose-sm max-w-none">
+					<ReactMarkdown
+						components={{
+							h1: ({ ...props }) => (
+								<h1
+									className="text-[24px] font-black uppercase tracking-tight text-[#333333] mt-0 mb-8 border-b border-[#eeeeee] pb-6"
+									{...props}
+								/>
+							),
 						h2: ({ ...props }) => (
 							<h2
 								className="text-[14px] font-bold uppercase tracking-[0.2em] text-[#333333] mt-10 mb-4"
@@ -64,6 +66,7 @@ const SectionPublications: React.FC = () => {
 				>
 					{content}
 				</ReactMarkdown>
+				</div>
 			</div>
 		</section>
 	);
