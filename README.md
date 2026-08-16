@@ -1,73 +1,78 @@
-# React + TypeScript + Vite
+# Dr. Jens Kohl - Personal Portfolio & Academic Webpage
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive, and dynamic personal portfolio website for **Dr. Jens Kohl**, showcasing professional experience, academic publications, cloud & GenAI engineering projects, and research contributions.
 
-Currently, two official plugins are available:
+Hosted on GitHub Pages at: [https://jenskohl.github.io/JensWebPage/](https://jenskohl.github.io/JensWebPage/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## 📖 Content & Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+The site serves as a central hub for professional and academic presence:
 
-## Expanding the ESLint configuration
+- **Profile Sidebar**: Quick introduction, contact details, social/academic links (LinkedIn, GitHub, Google Scholar, Credly), and a privacy-friendly live visitor impression counter.
+- **About Me**: In-depth personal bio and technical background rendered dynamically from Markdown (`public/docs/aboutMe.md`).
+- **Selected Projects**: Showcase of key projects spanning LLM-based agent testing, cloud incident root-cause analysis, Generative AI toolkits, enterprise cloud governance & migration, and automotive embedded systems.
+- **Publications**: List of academic papers, peer-reviewed conference publications, and articles rendered dynamically from Markdown (`public/docs/Publications.md`).
+- **Resume**: Professional timeline, roles, and milestones.
+- **Contact & Socials**: Direct links to communication channels and platforms.
+- **Legal & Privacy (Impressum / Datenschutz)**: GDPR-compliant privacy disclosures and provider legal information.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 🛠️ Technology Stack & Frameworks
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- **Core**: [React 19](https://react.dev/) + [TypeScript](https://www.typescriptlang.org/)
+- **Build Tool**: [Vite 7](https://vite.dev/) with `@vitejs/plugin-react`
+- **Styling**: [Tailwind CSS v4](https://tailwindcss.com/) with `@tailwindcss/vite` and `@tailwindcss/typography`
+- **Markdown Processing**: [React Markdown](https://github.com/remarkjs/react-markdown) for dynamic, component-styled markdown rendering
+- **Icons & Visuals**: [FontAwesome](https://fontawesome.com/) (`@fortawesome/react-fontawesome`) and [Lucide React](https://lucide.dev/)
+- **Animations**: [Framer Motion](https://www.framer.com/motion/)
+- **Linting & Code Quality**: [ESLint](https://eslint.org/) & [Biome](https://biomejs.dev/)
+- **Analytics & Tracking**: [CounterAPI](https://counterapi.dev/) (privacy-friendly visitor count) and `react-ga4`
+- **Deployment**: [gh-pages](https://github.com/tschaub/gh-pages) for automated GitHub Pages hosting
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+- Node.js (v18+ recommended)
+- npm
+
+### Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/JensKohl/JensWebPage.git
+
+# Navigate to project root
+cd JensWebPage
+
+# Install dependencies
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 💻 Development Commands
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+| Command | Description |
+| :--- | :--- |
+| `npm run dev` | Starts the local development server with Hot Module Replacement (HMR) |
+| `npm run build` | Compiles TypeScript (`tsc -b`) and bundles the application for production into `dist/` |
+| `npm run preview` | Locally previews the production build from `dist/` |
+| `npm run lint` | Runs ESLint across the codebase |
+| `npm run deploy` | Runs `predeploy` (builds the project) and publishes the `dist/` folder to GitHub Pages |
+
+---
+
+## 📦 Deployment to GitHub Pages
+
+The project is configured with `base: "/JensWebPage/"` in `vite.config.ts`. To deploy updates to GitHub Pages, run:
+
+```bash
+npm run deploy
 ```
+
+This will automatically trigger `npm run build` and push the generated `dist/` directory to the `gh-pages` branch.
