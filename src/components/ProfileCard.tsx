@@ -5,16 +5,25 @@ import ReactMarkdown from "react-markdown";
 import { social_links } from "../data/contact";
 import ViewCounter from "./ViewCounter";
 
+// TypeScript Interface defining the props expected by this component
 interface ProfileCardProps {
 	setActiveSection: (section: string) => void;
 }
 
 const ProfileCard: React.FC<ProfileCardProps> = ({ setActiveSection }) => {
+	// 'bio' holds the raw markdown string loaded from public/docs/shortAboutMe.md
 	const [bio, setBio] = useState<string>("");
 
+	// ---------------------------------------------------------------------------
+	// ASYNC DATA FETCHING:
+	// useEffect runs once when the component mounts.
+	// We use 'import.meta.env.BASE_URL' to ensure the request is routed properly
+	// on GitHub Pages (e.g. https://<user>.github.io/<repo>/docs/shortAboutMe.md).
+	// ---------------------------------------------------------------------------
 	useEffect(() => {
 		fetch(`${import.meta.env.BASE_URL}docs/shortAboutMe.md`)
 			.then((res) => {
+				// fetch() does not reject on HTTP 404/500, so we check res.ok manually
 				if (!res.ok) throw new Error("Could not load bio");
 				return res.text();
 			})
@@ -50,6 +59,8 @@ const ProfileCard: React.FC<ProfileCardProps> = ({ setActiveSection }) => {
 			{/* 2. MIDDLE SECTION: BIOGRAPHY */}
 			<div className="w-full mb-12">
 				<div className="text-[#666666] text-[15px] leading-relaxed prose prose-sm max-w-none">
+					{/* ReactMarkdown parses raw markdown and renders it as HTML elements.
+					    We override standard tags (h1, h2, ul, a) to apply our custom Tailwind styles. */}
 					<ReactMarkdown
 						components={{
 							h1: ({ ...props }) => (

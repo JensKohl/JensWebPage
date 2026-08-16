@@ -6,10 +6,15 @@ import {
 	faGraduationCap,
 } from "@fortawesome/free-solid-svg-icons";
 
+// ---------------------------------------------------------------------------
+// DATA MODELING: SOCIAL & CONTACT LINKS
+// Defines the structure for social media and academic profile entries.
+// Supports both FontAwesome IconDefinitions and custom inline SVG vector paths.
+// ---------------------------------------------------------------------------
 export interface SocialLinks {
 	link: string;
 	label: string;
-	customSvgPath?: string;
+	customSvgPath?: string; // Optional custom SVG path (e.g. for Google Scholar)
 	icon: IconDefinition;
 }
 

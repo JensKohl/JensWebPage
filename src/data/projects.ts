@@ -1,12 +1,23 @@
+// ---------------------------------------------------------------------------
+// DATA MODELING WITH TYPESCRIPT INTERFACES:
+// Defining an interface serves as a contract for our data objects.
+// It ensures that every project has required fields (title, link, image, etc.)
+// while allowing optional properties using '?:' (like subtitle).
+// ---------------------------------------------------------------------------
 export interface Project {
 	title: string;
-	subtitle?: string;
+	subtitle?: string; // Optional property
 	link: string;
 	image: string;
 	date: string;
 	desc: string;
 }
 
+// ---------------------------------------------------------------------------
+// SEPARATION OF CONCERNS:
+// Storing content as pure structured data (separate from UI components)
+// makes it easier to maintain, localize, or fetch from a CMS/API later.
+// ---------------------------------------------------------------------------
 export const projects: Project[] = [
 	{
 		title: "Structural testing for LLM-based agents",

@@ -3,8 +3,12 @@ import { useEffect, useState } from "react";
 import ReactMarkdown from "react-markdown";
 
 const SectionPublications: React.FC = () => {
+	// Holds the markdown text loaded from public/docs/Publications.md
 	const [content, setContent] = useState<string>("");
 
+	// ---------------------------------------------------------------------------
+	// ASYNC FETCH: Load the markdown file when the Publications section mounts
+	// ---------------------------------------------------------------------------
 	useEffect(() => {
 		fetch(`${import.meta.env.BASE_URL}docs/Publications.md`)
 			.then((res) => {
@@ -17,6 +21,7 @@ const SectionPublications: React.FC = () => {
 
 	return (
 		<section className="animate-fadeIn">
+			{/* prose class provides built-in typographic rhythm; custom overrides tailor specific tags */}
 			<div className="text-[#666666] text-[15px] leading-relaxed prose prose-sm max-w-none">
 				<ReactMarkdown
 					components={{

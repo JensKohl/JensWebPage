@@ -2,21 +2,28 @@ import type React from "react";
 import { useEffect, useState } from "react";
 
 const ViewCounter: React.FC = () => {
+	// 'views' holds the impression count as a formatted string, initialized to a loading placeholder '···'
 	const [views, setViews] = useState<string>("···");
 
+	// ---------------------------------------------------------------------------
+	// ASYNC REST API CALL:
+	// Runs once when the component is first mounted in the browser.
+	// Sends a GET request to increment and fetch the total visit counter.
+	// ---------------------------------------------------------------------------
 	useEffect(() => {
 		const key = "dr-jens-kohl-2025-final";
 
-		// We use a very fast timeout to ensure the site doesn't wait
 		fetch(`https://api.counterapi.dev/v1/${key}/visits/up`)
-			.then((res) => res.json())
+			.then((res) => res.json()) // Parse the JSON response stream into a JavaScript object
 			.then((data) => {
 				if (data?.count) {
+					// .toLocaleString() formats numbers with commas/dots based on user locale (e.g. 1,234)
 					setViews(data.count.toLocaleString());
 				}
 			})
 			.catch(() => {
-				setViews("Offline"); // Feedback if blocked
+				// Graceful error recovery: if network fails or adblocker blocks the API, show "Offline"
+				setViews("Offline");
 			});
 	}, []);
 

@@ -13,6 +13,12 @@ const SectionProjects: React.FC = () => {
 
 			{/* 2. Projects List */}
 			<div className="flex flex-col gap-16">
+				{/* -------------------------------------------------------------------
+				    DYNAMIC LIST RENDERING (.map):
+				    We transform each project object in our array into JSX elements.
+				    - 'key={project.title}': React requires a unique 'key' identifier 
+				      for every rendered list item to efficiently optimize DOM updates.
+				    ------------------------------------------------------------------- */}
 				{projects.map((project) => (
 					<article
 						key={project.title}
@@ -23,7 +29,7 @@ const SectionProjects: React.FC = () => {
 							{project.title}
 						</h2>
 
-						{/* Subtitle */}
+						{/* Conditional Rendering: Renders subtitle only if present in data */}
 						{project.subtitle && (
 							<p className="text-[14px] text-[#666666] mt-1 font-medium">
 								{project.subtitle}

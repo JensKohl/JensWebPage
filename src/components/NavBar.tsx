@@ -2,7 +2,10 @@ import type React from "react";
 
 /**
  * NavBar Component
- * Displays the name/brand and the navigation buttons.
+ * 
+ * Props:
+ * - 'active': The currently selected section name (string).
+ * - 'setActive': State updater function passed from parent (App.tsx) to change active tab.
  */
 interface NavBarProps {
 	active: string;
@@ -10,6 +13,7 @@ interface NavBarProps {
 }
 
 const NavBar: React.FC<NavBarProps> = ({ active, setActive }) => {
+	// List of available sections in the navigation header
 	const navLinks = [
 		"About",
 		"Resume",
