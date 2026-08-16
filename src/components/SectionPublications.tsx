@@ -6,8 +6,11 @@ const SectionPublications: React.FC = () => {
 	const [content, setContent] = useState<string>("");
 
 	useEffect(() => {
-		fetch("/docs/Publications.md")
-			.then((res) => res.text())
+		fetch(`${import.meta.env.BASE_URL}docs/Publications.md`)
+			.then((res) => {
+				if (!res.ok) throw new Error("Could not load publications");
+				return res.text();
+			})
 			.then((text) => setContent(text))
 			.catch(() => setContent("Could not load publications."));
 	}, []);

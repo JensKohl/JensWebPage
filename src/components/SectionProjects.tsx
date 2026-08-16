@@ -39,7 +39,7 @@ const SectionProjects: React.FC = () => {
 						<div className="relative group overflow-hidden border border-[#eeeeee] flex flex-col">
 							<div className="w-full">
 								<img
-									src={project.image}
+									src={`${import.meta.env.BASE_URL}${project.image.replace(/^\//, "")}`}
 									alt={project.title}
 									className="w-full h-auto min-h-[300px] max-h-[600px] object-cover grayscale group-hover:grayscale-0 transition-all duration-700 block"
 								/>

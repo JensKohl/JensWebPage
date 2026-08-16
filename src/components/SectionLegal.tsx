@@ -16,8 +16,6 @@ const SectionLegal: React.FC = () => {
 								Provider
 							</p>
 							<p>Dr. Jens Kohl</p>
-							<p>[Your Street Address]</p>
-							<p>[Zip Code] [City], Germany</p>
 						</div>
 						<div>
 							<p className="font-bold text-black uppercase text-[10px] tracking-widest mb-2">

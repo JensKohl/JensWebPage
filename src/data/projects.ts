@@ -58,7 +58,7 @@ export const projects: Project[] = [
 		title: "Generative AI based cloud assistant",
 		subtitle: "LLM-based agent assisting to optimize cloud accounts at scale",
 		link: "https://youtu.be/1Lat8dP7Eq0?si=V6DHfae2EGjnYsGt&t=2458",
-		image: "/images/projects/GenAIBot-Architecture-reinvent2023.png",
+		image: "images/projects/GenAIBot-Architecture-reinvent2023.png",
 		date: "2023-08-01",
 		/*desc:  'As part of a joint AWS and BMW team, I ideated and co-led the development of one of the first LLM-based multi-agent systems to optimize cloud infrastructure for ' + 
                 'cost, quality, and security. Built on Amazon Bedrock, it translates natural-language requests into actionable insights, identifies optimization opportunities, ' + 
