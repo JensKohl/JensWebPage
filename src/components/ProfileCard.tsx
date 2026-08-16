@@ -3,7 +3,6 @@ import type React from "react";
 import { useEffect, useState } from "react";
 import ReactMarkdown from "react-markdown";
 import { social_links } from "../data/contact";
-import ViewCounter from "./ViewCounter";
 
 // TypeScript Interface defining the props expected by this component
 interface ProfileCardProps {
@@ -109,33 +108,19 @@ const ProfileCard: React.FC<ProfileCardProps> = ({ setActiveSection }) => {
 				))}
 			</div>
 
-			{/* 4. ANCHORED FOOTER: LEGAL & METRICS */}
-			{/* We keep this one line to visually separate "Content" from "Administration" */}
-			<div className="mt-auto pt-8 flex flex-col items-start w-full border-t border-[#f8f8f8]">
-				<div className="flex items-center gap-2 mb-1.5">
-					<p className="text-[10px] text-[#333333] uppercase tracking-[0.2em] font-bold">
-						© {new Date().getFullYear()}
-					</p>
-					<p className="text-[10px] text-[#aaaaaa] uppercase tracking-[0.2em] font-medium">
-						Dr. Jens Kohl
-					</p>
-				</div>
+			{/* 4. ANCHORED FOOTER: COPYRIGHT & LEGAL */}
+			<div className="mt-auto pt-8 flex items-center justify-between w-full border-t border-[#f8f8f8]">
+				<p className="text-[10px] text-[#aaaaaa] uppercase tracking-[0.2em] font-medium">
+					© {new Date().getFullYear()} Dr. Jens Kohl
+				</p>
 
-				<div className="flex items-center gap-4">
-					<div className="opacity-30 grayscale hover:opacity-100 transition-opacity duration-500">
-						<ViewCounter />
-					</div>
-
-					<span className="w-1 h-1 rounded-full bg-[#eeeeee]" />
-
-					<button
-						type="button"
-						onClick={() => setActiveSection("Legal")}
-						className="text-[9px] uppercase tracking-[0.3em] text-[#aaaaaa] hover:text-black transition-all duration-300 font-bold"
-					>
-						Legal & Privacy
-					</button>
-				</div>
+				<button
+					type="button"
+					onClick={() => setActiveSection("Legal")}
+					className="text-[10px] uppercase tracking-[0.2em] text-[#aaaaaa] hover:text-black transition-all duration-300 font-bold"
+				>
+					Legal & Privacy
+				</button>
 			</div>
 		</aside>
 	);

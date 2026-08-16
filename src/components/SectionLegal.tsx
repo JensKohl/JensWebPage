@@ -35,11 +35,11 @@ const SectionLegal: React.FC = () => {
 					</h2>
 					<div className="text-[15px] leading-relaxed text-[#555555]">
 						<p>
-							This website does not use tracking cookies or store personal user
-							data. We use a privacy-friendly visit counter (CounterAPI) that
-							does not identify individual visitors. Server logs are kept only
-							for security and technical stability according to Art. 6 Para. 1
-							lit. f GDPR.
+							This website does not use tracking cookies, analytics trackers, or
+							third-party visit counters. No personal user data is stored or
+							transmitted to external analytics providers. Server logs are kept
+							by GitHub Pages only for security and technical stability according
+							to Art. 6 Para. 1 lit. f GDPR.
 						</p>
 					</div>
 				</section>

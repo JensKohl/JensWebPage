@@ -10,7 +10,7 @@ Hosted on GitHub Pages at: [https://jenskohl.github.io/JensWebPage/](https://jen
 
 The site serves as a central hub for professional and academic presence:
 
-- **Profile Sidebar**: Quick introduction, contact details, social/academic links (LinkedIn, GitHub, Google Scholar, Credly), and a privacy-friendly live visitor impression counter.
+- **Profile Sidebar**: Quick introduction, contact details, and social/academic links (LinkedIn, GitHub, Google Scholar, Credly).
 - **About Me**: In-depth personal bio and technical background rendered dynamically from Markdown (`public/docs/aboutMe.md`).
 - **Selected Projects**: Showcase of key projects spanning LLM-based agent testing, cloud incident root-cause analysis, Generative AI toolkits, enterprise cloud governance & migration, and automotive embedded systems.
 - **Publications**: List of academic papers, peer-reviewed conference publications, and articles rendered dynamically from Markdown (`public/docs/Publications.md`).
@@ -29,7 +29,6 @@ The site serves as a central hub for professional and academic presence:
 - **Icons & Visuals**: [FontAwesome](https://fontawesome.com/) (`@fortawesome/react-fontawesome`) and [Lucide React](https://lucide.dev/)
 - **Animations**: [Framer Motion](https://www.framer.com/motion/)
 - **Linting & Code Quality**: [ESLint](https://eslint.org/) & [Biome](https://biomejs.dev/)
-- **Analytics & Tracking**: [CounterAPI](https://counterapi.dev/) (privacy-friendly visitor count) and `react-ga4`
 - **Deployment**: [gh-pages](https://github.com/tschaub/gh-pages) for automated GitHub Pages hosting
 
 ---
